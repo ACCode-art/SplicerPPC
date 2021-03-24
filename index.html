@@ -6,23 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
     </style>
     <link rel="stylesheet" href="/index.css" />
     <title>SplicerPPC</title>
   </head>
   <body>
+    <div class="packOverlay">
+      <div class="packOverlay__header">
+        <h3>Packs</h3>
+        <h3 class="exit-overlay">X</h3>
+      </div>
+      <button class="deals">Deals</button>
+      <button class="locations">Location</button>
+    </div>
     <div class="header">
       <img src="/img/SpliceLogo.png" alt="" />
       <p>SplicerPPC</p>
     </div>
     <div class="inputs">
       <input type="text" placeholder="search terms..." />
-
-      <button class="deals">Deals Pack</button>
-      <button class="locations">Location Pack</button>
+      <button class="packs">Packs</button>
+      <button class="copy">Copy Text</button>
     </div>
 
     <div class="main"></div>
+
     <script src="/index.js"></script>
   </body>
 </html>

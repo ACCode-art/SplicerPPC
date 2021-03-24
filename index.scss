@@ -20,6 +20,13 @@ $pink: #7f95a8;
   img {
     width: 50px;
     margin-right: 10px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+
+  p {
+    font-family: "Satisfy", cursive;
+    font-size: 15px;
   }
 }
 
@@ -73,18 +80,99 @@ $pink: #7f95a8;
   }
 }
 
+.copy {
+  color: rgb(175, 37, 37) !important;
+
+  background-color: white !important;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+}
+
+.packOverlay {
+  position: fixed;
+  background-color: $blue;
+  display: none;
+  height: 100vh;
+  width: 15vw;
+  right: 0;
+  border-left: 1px solid $pink;
+}
+
+.packOverlayShow {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation: fade-in 700ms ease-in-out;
+
+  .packOverlay__header {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+
+    .exit-overlay {
+      transition: 300ms;
+      &:hover {
+        cursor: pointer;
+        color: $red;
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  .deals {
+    color: white;
+    background-color: $pink;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: 300ms;
+    &:hover {
+      background-color: $red;
+      color: whitesmoke;
+      cursor: pointer;
+      border-radius: 25px;
+    }
+  }
+
+  .locations {
+    width: 80%;
+    height: 50px;
+    color: white;
+    background-color: $pink;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: 300ms;
+    &:hover {
+      background-color: $red;
+      color: whitesmoke;
+      cursor: pointer;
+      border-radius: 25px;
+    }
+  }
+}
+
 .main {
   background-color: $blue;
   height: 82vh;
   line-height: 2;
-  padding: 0 100px;
+  padding: 0 300px;
   text-align: center;
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateX(200px);
   }
   to {
     opacity: 1;
