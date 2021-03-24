@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+//colors
+
+$red: #b23a48;
+$blue: #f1f1f1;
+$pink: #7f95a8;
+
+.header {
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  background-color: $pink;
+  padding: 0 100px;
+
+  img {
+    width: 50px;
+    margin-right: 10px;
+  }
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-color: $blue;
+  padding: 0 100px;
+
+  input {
+    height: 45px;
+    margin-right: 20px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+  }
+
+  .keywords {
+    margin-right: 20px;
+    width: 200px;
+
+    select {
+      height: 45px;
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .no-keyword {
+    color: rgba(255, 255, 255, 0.205);
+  }
+
+  button {
+    color: whitesmoke;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: $pink;
+    transition: 300ms;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: $red;
+      cursor: pointer;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.main {
+  background-color: $blue;
+  height: 82vh;
+  line-height: 2;
+  padding: 0 100px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
