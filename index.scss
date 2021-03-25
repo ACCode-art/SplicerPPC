@@ -38,7 +38,7 @@ $pink: #7f95a8;
   background-color: $blue;
   padding: 0 100px;
 
-  input {
+  .search-term-input {
     height: 45px;
     margin-right: 20px;
     padding-left: 10px;
@@ -49,17 +49,10 @@ $pink: #7f95a8;
   .keywords {
     margin-right: 20px;
     width: 200px;
-
-    select {
-      height: 45px;
-      width: 100%;
-      border: none;
-      outline: none;
-    }
   }
 
-  .no-keyword {
-    color: rgba(255, 255, 255, 0.205);
+  .packs {
+    width: 80px;
   }
 
   button {
@@ -78,17 +71,26 @@ $pink: #7f95a8;
       transform: translateY(-5px);
     }
   }
+
+  .copy {
+    color: rgb(175, 37, 37) !important;
+
+    background-color: white !important;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-5px);
+    }
+  }
 }
 
-.copy {
-  color: rgb(175, 37, 37) !important;
-
-  background-color: white !important;
-
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-  }
+.main {
+  background-color: $blue;
+  height: 82vh;
+  font-size: 20px;
+  line-height: 2;
+  padding: 0 300px;
+  text-align: center;
 }
 
 .packOverlay {
@@ -99,13 +101,12 @@ $pink: #7f95a8;
   width: 15vw;
   right: 0;
   border-left: 1px solid $pink;
-}
 
-.packOverlayShow {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  animation: fade-in 700ms ease-in-out;
+  .pack-overlay-desc {
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
 
   .packOverlay__header {
     width: 80%;
@@ -159,14 +160,32 @@ $pink: #7f95a8;
       border-radius: 25px;
     }
   }
+
+  .electricalStores {
+    width: 80%;
+    height: 50px;
+    color: white;
+    background-color: $pink;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: 300ms;
+    &:hover {
+      background-color: $red;
+      color: whitesmoke;
+      cursor: pointer;
+      border-radius: 25px;
+    }
+  }
 }
 
-.main {
-  background-color: $blue;
-  height: 82vh;
-  line-height: 2;
-  padding: 0 300px;
-  text-align: center;
+.packOverlayShow {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation: fade-in 700ms ease-in-out;
 }
 
 @keyframes fade-in {

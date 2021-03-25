@@ -1,7 +1,7 @@
 const input = document.querySelector("input");
 const deals = document.querySelector(".deals");
 const locations = document.querySelector(".locations");
-const select = document.querySelector("select");
+const electricalStoresElement = document.querySelector(".electricalStores");
 const main = document.querySelector(".main");
 const offer = document.querySelector(".offer");
 const copy = document.querySelector(".copy");
@@ -19,6 +19,10 @@ const offerValues = [
   "instock",
   "compare",
   "offer",
+  "on sale",
+  "low-priced",
+  "lowpriced",
+  "low price",
 ];
 
 const locationValues = [
@@ -27,23 +31,65 @@ const locationValues = [
   "near me",
   "my area",
   "in my area",
+  "around my area",
+  "around my location",
 ];
 
-const loopArray = () => {
-  const HTML = offerValues.map((element) => {
+const electricalStores = [
+  "Amazon",
+  "Currys PC World",
+  "John Lewis & Partners",
+  "John Lewis",
+  "Very",
+  "AO",
+  "ebay",
+  "Littlewoods",
+];
+
+const loopArrayUniversal = (array) => {
+  const HTML = array.map((element) => {
     return `${element} ${input.value},${input.value} ${element}`;
   });
 
   main.innerHTML = HTML;
 };
 
-const loopLocationArray = () => {
-  const HTML = locationValues.map((element) => {
-    return `${element} ${input.value},${input.value} ${element}`;
-  });
+// event listeners
 
-  main.innerHTML = HTML;
-};
+deals.addEventListener("click", () => {
+  loopArrayUniversal(offerValues);
+});
+
+locations.addEventListener("click", () => {
+  loopArrayUniversal(locationValues);
+});
+electricalStoresElement.addEventListener("click", () => {
+  loopArrayUniversal(electricalStores);
+});
+
+//show overlay
+
+packs.addEventListener("click", () => {
+  packOverlay.classList.toggle("packOverlayShow");
+  console.log("click");
+});
+
+exitOverlay.addEventListener("click", () => {
+  packOverlay.classList.toggle("packOverlayShow");
+  console.log("click");
+});
+
+//mouse over
+
+packs.addEventListener("mouseover", () => {
+  packs.textContent = "go!";
+});
+
+packs.addEventListener("mouseout", () => {
+  packs.textContent = "search";
+});
+
+// copy to clipboard
 
 const copyMyText = () => {
   let text = main.textContent;
@@ -56,17 +102,3 @@ const copyMyText = () => {
       alert("Error in copying text: ", err);
     });
 };
-
-deals.addEventListener("click", loopArray);
-locations.addEventListener("click", loopLocationArray);
-copy.addEventListener("click", copyMyText);
-
-packs.addEventListener("click", () => {
-  packOverlay.classList.toggle("packOverlayShow");
-  console.log("click");
-});
-
-exitOverlay.addEventListener("click", () => {
-  packOverlay.classList.toggle("packOverlayShow");
-  console.log("click");
-});
